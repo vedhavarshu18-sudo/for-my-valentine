@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Thangameyy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="page1" class="active">
+        <div class="card main-card">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZm96Zjg3a29sbDl4YWV0NDkxN2dvMmp5dzl0dWR6bWRxdDY0NGl3ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PF6e8Xq8dVnVX1BGLS/giphy.gif" alt="cute-bear" class="header-gif">
+            <h1>THANGAMEYYY!!!</h1>
+            <p>Will you be my valentine??? 😻</p>
+            <div class="btn-group">
+                <button onclick="showPage('page2-yes')" class="btn-pink">YES ❤️</button>
+                <button onclick="showPopup('no-popup')" class="btn-white">NO 💔</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="no-popup" class="overlay">
+        <div class="popup-card">
+            <p>Maybe I shld explain the perks of being my valentine....let me tell you babe 😁</p>
+            <button onclick="showPage('page-perks')" class="btn-pink">Okay</button>
+        </div>
+    </div>
+
+    <section id="page-perks" class="hidden">
+        <div class="card perks-card">
+            <button class="close-btn" onclick="showPage('page1')">×</button>
+            <h2>Why you shld choose me as your valentine 💘</h2>
+            <div class="perks-container">
+                <div class="perk-box">
+                    <h3>Pros 🎀</h3>
+                    <div class="carousel">
+                        <span id="perk-text">I listen like actually i listen 👻</span>
+                        <div class="nav-arrows">
+                            <button onclick="prevPerk()" class="ctrl-btn">◀</button>
+                            <button onclick="nextPerk()" class="ctrl-btn">▶</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="perk-box">
+                    <h3>Cons ❌</h3>
+                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWRidmc2d2M2cHE1a3l2dWFpdjN1bzh3cHhxbHVqZjUyZGJrcTFrZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zOr587VMn9GxWOFByY/giphy.gif" class="con-gif">
+                    <p>Nothing!!!!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="page2-yes" class="hidden">
+        <div class="card main-card">
+            <h1>YAAAAYYY!!!</h1>
+            <p>That's the best decision ever made baby 💗</p>
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnF0NnVwZ3g1MW8zazRmcGNxbmI3MWRla3p3cmUxcTJiamthNWkydSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/52IISRYqpTcpdsP7Th/giphy.gif" class="header-gif">
+            <h2>I LOVE YOU 💞</h2>
+            <button onclick="showPage('page3-gifts')" class="btn-pink">Click here for the gifts, Thangameyyyyyyy</button>
+        </div>
+    </section>
+
+    <section id="page3-gifts" class="hidden">
+        <div class="card gifts-card">
+            <h1>💝 Your Valentines gift 💝</h1>
+            <div class="gift-grid">
+                <div class="gift-item" onclick="showPage('gift1-letter')">
+                    <p>Gift 1</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/6645/6645749.png">
+                </div>
+                <div class="gift-item" onclick="showPage('gift2-music')">
+                    <p>Gift 2</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/7589/7589870.png">
+                </div>
+                <div class="gift-item" onclick="showPage('gift3-photos')">
+                    <p>Gift 3</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/6645/6645767.png">
+                </div>
+            </div>
+            <button class="btn-pink mt-20" onclick="showPage('page1')">Back to Love</button>
+        </div>
+    </section>
+
+    <section id="gift1-letter" class="hidden">
+        <div class="card letter-card">
+            <div class="letter-content">
+                <h2>My Dear Thangameyyyyyyy,</h2>
+                <p><span class="highlight">I</span> fell for you in a way I never expected, and now every day feels brighter just because you're in it.</p>
+                <p><span class="highlight">L</span>oving you comes so naturally. It's in your smile, your laugh, and the comfort I feel whenever I'm with you.</p>
+                <p><span class="highlight">Y</span>ou are my favorite part of every moment, and the best thing that ever happened to me.</p>
+                <div class="signature">
+                    <p>Forever yours,</p>
+                    <p><b>Vedha</b></p>
+                </div>
+            </div>
+            <button class="btn-pink" onclick="showPage('page3-gifts')">Back to Gifts</button>
+        </div>
+    </section>
+
+    <section id="gift2-music" class="hidden">
+        <div class="card music-card">
+            <h2>Our love sounds like this!!</h2>
+            <audio id="audio-player"></audio>
+            <div class="spotify-player">
+                <div id="now-playing" style="font-weight: bold; margin-bottom: 10px; color: var(--accent-pink);">Select a song to play 🎵</div>
+                <div class="player-controls">
+                    <button onclick="prevSong()" class="ctrl-btn">⏮</button>
+                    <button id="play-pause-btn" onclick="togglePlay()" class="play-btn">▶</button>
+                    <button onclick="nextSong()" class="ctrl-btn">⏭</button>
+                </div>
+                <div class="progress-container" onclick="setProgress(event)">
+                    <div id="progress-bar" class="progress"></div>
+                </div>
+            </div>
+            <ul class="playlist">
+                <li class="song-item" onclick="playSong(0)">1. Vinmeen</li>
+                <li class="song-item" onclick="playSong(1)">2. Azhaipaya azhaipaya</li>
+                <li class="song-item" onclick="playSong(2)">3. Kaara Attakkaara</li>
+                <li class="song-item" onclick="playSong(3)">4. Yaarumilla</li>
+                <li class="song-item" onclick="playSong(4)">5. Nee korinaal</li>
+            </ul>
+            <button class="btn-pink mt-20" onclick="pauseAndReturn()">Back to Gifts</button>
+        </div>
+    </section>
+
+    <section id="gift3-photos" class="hidden">
+        <div class="card photos-card">
+            <h2>Every moment with you! 📸</h2>
+            <div class="photo-grid">
+                <div class="photo-item"><img src="assets/images/img1.jpeg"><p>Our first meet together</p></div>
+                <div class="photo-item"><img src="assets/images/img2.jpeg"><p>Nights out together</p></div>
+                <div class="photo-item"><img src="assets/images/img3.jpeg"><p>Travelling together</p></div>
+                <div class="photo-item"><img src="assets/images/img4.jpeg"><p>Making me feel happy</p></div>
+                <div class="photo-item"><img src="assets/images/img5.jpeg"><p>The way you see me</p></div>
+                <div class="photo-item"><img src="assets/images/img6.jpeg"><p>Our traditional look</p></div>
+            </div>
+            <button class="btn-pink" onclick="showPage('page3-gifts')">Back to Gifts</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
